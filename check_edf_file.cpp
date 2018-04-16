@@ -1154,9 +1154,9 @@ struct edfhdrblock * EDFfileCheck::check_edf_file(FILE *inputfile, char *txt_str
   {
     edfhdr->recordsize *= 3;
 
-    if(edfhdr->recordsize > 15728640)
+    if(edfhdr->recordsize > 15728640*10)
     {
-      sprintf(txt_string, "Error, the datarecordsize is %i bytes. The datarecordsize should not exceed 15 MB.",
+      sprintf(txt_string, "Error, the datarecordsize is %i bytes. The datarecordsize should not exceed 150 MB.",
                           edfhdr->recordsize);
       free(edf_hdr);
       free(edfhdr->edfparam);
